@@ -1,0 +1,9 @@
+{
+  "name": "repedeckcreator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static real estate deck designer preview server",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
