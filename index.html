@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1055 Pine Deck Designer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Real Estate Investor Deck Designer</p>
+          <h1>1055 Pine Slide Design Builder</h1>
+          <p class="subhead">
+            Enter your deal metrics, pro forma highlights, and market notes to generate a
+            polished slide-by-slide design plan.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title">Output</div>
+          <p>11 curated slide designs inspired by institutional investor decks.</p>
+          <div class="hero-meta">
+            <span>Theme: Warm Stone</span>
+            <span>Format: 16:9</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="panel input-panel">
+          <h2>Deal Inputs</h2>
+          <form id="deck-form">
+            <div class="field-row">
+              <label>
+                Deal Name
+                <input name="dealName" value="1055 Pine" />
+              </label>
+              <label>
+                Location
+                <input name="location" value="Savannah, GA" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Property Type
+                <input name="propertyType" value="Boutique Hotel Conversion" />
+              </label>
+              <label>
+                Total Project Cost
+                <input name="totalCost" value="$33.9M" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Keys / Units
+                <input name="keys" value="64" />
+              </label>
+              <label>
+                Hold Period
+                <input name="holdPeriod" value="4.0 years" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Target IRR
+                <input name="irr" value="18.3%" />
+              </label>
+              <label>
+                Equity Multiple
+                <input name="equityMultiple" value="1.90x" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Investor Equity Raise
+                <input name="equityRaise" value="$6.0M" />
+              </label>
+              <label>
+                Exit Cap Rate
+                <input name="exitCap" value="8.0%" />
+              </label>
+            </div>
+
+            <label>
+              Investment Highlights (one per line)
+              <textarea name="highlights" rows="5">
+Location in Savannah’s Historic District
+Limited-service margin profile
+Experienced hospitality sponsor
+Shovel-ready permits and design
+Attractive last dollar basis</textarea
+              >
+            </label>
+
+            <label>
+              Market Drivers (one per line)
+              <textarea name="marketDrivers" rows="5">
+9.7M overnight visitors in 2022
+$4.7B visitor spending impact
+Port of Savannah is #4 in the US
+Rapid population growth 2020-2023
+Top-ranked arts institution (SCAD)</textarea
+              >
+            </label>
+
+            <label>
+              Sales Comps (CSV lines: Date | Asset | City | Keys | Price | Price/Key)
+              <textarea name="salesComps" rows="5">
+May-21 | Perry Lane Hotel | Savannah | 167 | $115,000,000 | $688,623
+Dec-22 | Hamilton Turner Inn | Savannah | 17 | $8,500,000 | $500,000
+Nov-21 | The Alida | Savannah | 173 | $106,049,000 | $613,000</textarea
+              >
+            </label>
+
+            <label>
+              Sources & Uses (JSON array of {label, amount, percent})
+              <textarea name="sourcesUses" rows="6">
+[{"label":"Senior Loan","amount":"$22.0M","percent":"64.8%"},
+{"label":"Preferred Equity","amount":"$6.0M","percent":"17.6%"},
+{"label":"Common Equity","amount":"$5.9M","percent":"17.6%"}]</textarea
+              >
+            </label>
+
+            <label>
+              Cash Flow Notes (one per line)
+              <textarea name="cashFlowNotes" rows="4">
+Priority return 8% annually to investors
+Return of capital at disposition
+70/30 split after preferred return
+Capital event promotes GP to 30%</textarea
+              >
+            </label>
+
+            <label>
+              Pro Forma Snapshot (one per line)
+              <textarea name="proForma" rows="4">
+Year 1 NOI: $2.0M → Year 4 NOI: $3.2M
+EBITDA margin grows from 32% to 38%
+Stabilized ADR: $365
+Occupancy ramps to 74%</textarea
+              >
+            </label>
+
+            <div class="actions">
+              <button type="submit">Generate Slide Designs</button>
+              <button type="button" id="copy-json">Copy JSON</button>
+            </div>
+            <p class="helper">
+              Tip: Paste data directly from your pro forma or cash flow statement and edit the
+              slide outputs on the right.
+            </p>
+          </form>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="output-header">
+            <div>
+              <h2>Slide Blueprint</h2>
+              <p>Ready-to-build layouts for PowerPoint, Canva, or Pitch.</p>
+            </div>
+            <div class="output-meta" id="output-meta"></div>
+          </div>
+          <div id="slides" class="slides"></div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
